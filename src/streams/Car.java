@@ -2,9 +2,9 @@ package streams;
 
 public class Car {
     private String name;
-    private int price;
+    private double price;
 
-    public Car(String name, int price) {
+    public Car(String name, double price) {
         this.name = name;
         this.price = price;
     }
@@ -17,16 +17,21 @@ public class Car {
         this.name = name;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
     @Override
     public String toString() {
         return "Car { name : " + name  + " , price : " + price + " }";
+    }
+
+    public double increasePrice(double percent) {
+        price = price + (price * (percent / 100));
+        return price;
     }
 }
